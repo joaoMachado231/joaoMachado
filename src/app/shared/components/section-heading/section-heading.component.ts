@@ -11,5 +11,6 @@ import { Component, Input } from '@angular/core';
 export class SectionHeadingComponent {
     @Input() eyebrow = 'SEÇÃO';
     @Input() title = 'Título';
+    @Input() titleId = 'section-heading-title';
     @Input() description?: string;
 }

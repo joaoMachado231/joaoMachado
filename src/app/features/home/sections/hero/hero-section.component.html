@@ -76,13 +76,8 @@
         </div>
 
         <div class="hero__stats" aria-label="Estatísticas principais">
-            <div *ngFor="let stat of stats" class="hero__stat-card">
-                <img [src]="stat.icon" [alt]="stat.label">
-                <div>
-                    <span class="hero__stat-value">{{ stat.value }}</span>
-                    <span class="hero__stat-label">{{ stat.label }}</span>
-                </div>
-            </div>
+            <app-card *ngFor="let stat of stats" class="hero__stat-card" [icon]="stat.icon" [title]="stat.value"
+                [caption]="stat.label"></app-card>
         </div>
     </div>
 </section>

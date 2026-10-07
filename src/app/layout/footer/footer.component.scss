@@ -1,60 +1,58 @@
 .site-footer {
     border-top: 1px solid var(--color-border);
     background: rgba(10, 14, 23, 0.6);
-}
 
-.site-footer__inner {
-    display: grid;
-    gap: var(--space-6);
-    padding-block: var(--space-8);
-}
+    &__inner {
+        display: grid;
+        gap: var(--space-6);
+        padding-block: var(--space-8);
+    }
 
-.site-footer__name,
-.site-footer__role,
-.site-footer__meta {
-    margin: 0;
-}
+    &__name,
+    &__role,
+    &__meta {
+        margin: 0;
+    }
 
-.site-footer__name {
-    color: var(--color-text-primary);
-    font-weight: var(--font-weight-semibold);
-}
+    &__name {
+        color: var(--color-text-primary);
+        font-weight: var(--font-weight-semibold);
+    }
 
-.site-footer__role,
-.site-footer__nav a,
-.site-footer__socials a,
-.site-footer__meta {
-    color: var(--color-text-secondary);
-    text-decoration: none;
-}
+    &__role,
+    &__nav a,
+    &__socials a,
+    &__meta {
+        color: var(--color-text-secondary);
+        text-decoration: none;
+    }
 
-.site-footer__nav,
-.site-footer__socials {
-    display: flex;
-    flex-wrap: wrap;
-    gap: var(--space-4);
-}
+    &__nav,
+    &__socials {
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--space-4);
+    }
 
-.site-footer__nav a,
-.site-footer__socials a {
-    transition: color var(--transition-fast);
-}
+    &__nav a,
+    &__socials a {
+        transition: color var(--transition-fast);
 
-.site-footer__nav a:hover,
-.site-footer__socials a:hover,
-.site-footer__nav a:focus-visible,
-.site-footer__socials a:focus-visible {
-    color: var(--color-text-primary);
-}
+        &:hover,
+        &:focus-visible {
+            color: var(--color-text-primary);
+        }
+    }
 
-.site-footer__meta {
-    border-top: 1px solid var(--color-border);
-}
+    &__meta {
+        border-top: 1px solid var(--color-border);
+    }
 
-.site-footer__meta-inner {
-    display: flex;
-    justify-content: center;
-    padding-block: var(--space-8);
+    &__meta-inner {
+        display: flex;
+        justify-content: center;
+        padding-block: var(--space-8);
+    }
 }
 
 @media (min-width: 768px) {

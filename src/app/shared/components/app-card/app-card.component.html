@@ -1,0 +1,10 @@
+<article class="app-card" [class.app-card--featured]="featured">
+    <div class="app-card__inner">
+        <img *ngIf="icon" class="app-card__icon" [src]="icon" alt="" aria-hidden="true" />
+
+        <div *ngIf="title || caption" class="app-card__content">
+            <span *ngIf="title" class="app-card__title">{{ title }}</span>
+            <span *ngIf="caption" class="app-card__caption">{{ caption }}</span>
+        </div>
+    </div>
+</article>

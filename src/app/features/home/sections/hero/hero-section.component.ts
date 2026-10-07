@@ -2,11 +2,12 @@ import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { siteConfig } from '../../../../core/config/site.config';
 import { AppButtonComponent } from '../../../../shared/components/app-button/app-button.component';
+import { AppCardComponent } from '../../../../shared/components/app-card/app-card.component';
 
 @Component({
     selector: 'app-hero-section',
     standalone: true,
-    imports: [CommonModule, AppButtonComponent],
+    imports: [CommonModule, AppButtonComponent, AppCardComponent],
     templateUrl: './hero-section.component.html',
     styleUrl: './hero-section.component.scss',
     changeDetection: ChangeDetectionStrategy.OnPush,

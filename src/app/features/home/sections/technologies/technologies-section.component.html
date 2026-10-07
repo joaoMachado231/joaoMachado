@@ -1,0 +1,22 @@
+<section class="technologies" id="technologies" aria-labelledby="technologies-title">
+    <div class="container technologies__container">
+        <app-section-heading eyebrow="TECNOLOGIAS" title="Ferramentas que fazem parte da minha jornada."
+            titleId="technologies-title"
+            description="Estas são algumas das tecnologias que utilizo no desenvolvimento de aplicações e que fazem parte da minha experiência profissional e dos meus projetos."></app-section-heading>
+
+        <ul id="technologies-grid" class="technologies__grid" aria-label="Tecnologias e ferramentas que utilizo">
+            <li *ngFor="let technology of visibleTechnologies(); let index = index" class="technology-card"
+                [class.technology-card--revealed]="showAllTechnologies() && index >= initialVisibleCount"
+                [style.--technology-reveal-delay]="(index - initialVisibleCount) * 55 + 'ms'"
+                [attr.data-category]="technology.category">
+                <app-card [icon]="technology.icon" [title]="technology.name"></app-card>
+            </li>
+        </ul>
+
+        <button *ngIf="technologies.length > initialVisibleCount" class="technologies__toggle" type="button"
+            [attr.aria-controls]="'technologies-grid'" [attr.aria-expanded]="showAllTechnologies()"
+            (click)="toggleTechnologies()">
+            {{ showAllTechnologies() ? 'Mostrar menos' : 'Mostrar mais' }}
+        </button>
+    </div>
+</section>

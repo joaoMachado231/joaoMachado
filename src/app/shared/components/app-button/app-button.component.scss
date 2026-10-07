@@ -22,38 +22,33 @@
         background var(--transition-base);
     box-shadow: var(--button-shadow);
     cursor: pointer;
-}
 
-.app-button:hover {
-    transform: translateY(-1px);
-}
+    &:hover {
+        transform: translateY(-1px);
+    }
 
-.app-button:focus-visible {
-    outline: 2px solid var(--color-primary-light);
-    outline-offset: 2px;
-}
+    &__content {
+        display: inline-flex;
+        align-items: center;
+        gap: var(--space-2);
+    }
 
-.app-button__content {
-    display: inline-flex;
-    align-items: center;
-    gap: var(--space-2);
-}
+    &--primary {
+        --button-background: var(--gradient-primary);
+        --button-border: transparent;
+        --button-shadow: var(--shadow-primary-glow);
+    }
 
-.app-button--primary {
-    --button-background: var(--gradient-primary);
-    --button-border: transparent;
-    --button-shadow: var(--shadow-primary-glow);
-}
+    &--secondary {
+        --button-background: rgba(148, 163, 184, 0.08);
+        --button-border: var(--color-border);
+    }
 
-.app-button--secondary {
-    --button-background: rgba(148, 163, 184, 0.08);
-    --button-border: var(--color-border);
-}
-
-.app-button--ghost {
-    --button-background: transparent;
-    --button-border: transparent;
-    --button-color: var(--color-text-secondary);
+    &--ghost {
+        --button-background: transparent;
+        --button-border: transparent;
+        --button-color: var(--color-text-secondary);
+    }
 }
 
 @media (prefers-reduced-motion: reduce) {

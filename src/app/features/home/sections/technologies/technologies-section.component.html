@@ -4,19 +4,19 @@
             titleId="technologies-title"
             description="Estas são algumas das tecnologias que utilizo no desenvolvimento de aplicações e que fazem parte da minha experiência profissional e dos meus projetos."></app-section-heading>
 
-        <ul id="technologies-grid" class="technologies__grid" aria-label="Tecnologias e ferramentas que utilizo">
-            <li *ngFor="let technology of visibleTechnologies(); let index = index" class="technology-card"
-                [class.technology-card--revealed]="showAllTechnologies() && index >= initialVisibleCount"
-                [style.--technology-reveal-delay]="(index - initialVisibleCount) * 55 + 'ms'"
-                [attr.data-category]="technology.category">
-                <app-card [icon]="technology.icon" [title]="technology.name"></app-card>
-            </li>
-        </ul>
-
-        <button *ngIf="technologies.length > initialVisibleCount" class="technologies__toggle" type="button"
-            [attr.aria-controls]="'technologies-grid'" [attr.aria-expanded]="showAllTechnologies()"
-            (click)="toggleTechnologies()">
-            {{ showAllTechnologies() ? 'Mostrar menos' : 'Mostrar mais' }}
-        </button>
+        <div class="technologies__container">
+            @for(item of myTools; track item.id) {
+            <div class="technologies__container__item" [class.open]="isSessionOpened(item.id)"
+                (click)="expandSession(item.id)">
+                <div class="technologies__container__item__label">
+                    <span class="technologies__container__item__label-text">{{ item.name }}</span>
+                    <img src="icons/technologies/chevron-icon.svg" alt="icone chevron">
+                </div>
+                <div class="technologies__container__item__answer">
+                    <p class="technologies__container__item__answer-text">{{ item.techs?.join(', ') }}</p>
+                </div>
+            </div>
+            }
+        </div>
     </div>
 </section>

@@ -1,0 +1,27 @@
+<section class="experience" id="experiencia" aria-labelledby="experience-title">
+    <div class="container experience__container">
+        <app-section-heading eyebrow="EXPERIÊNCIA PROFISSIONAL" title="Experiência profissional"
+            titleId="experience-title"></app-section-heading>
+
+        <ol class="experience__timeline" aria-label="Experiências profissionais">
+            @for (experience of experiences; track experience.role + experience.startDate) {
+            <li class="experience-item" [class.experience-item--current]="experience.current">
+                <div class="experience-item__timeline">
+                    <span class="experience-item__marker" aria-hidden="true"></span>
+                    <time class="experience-item__date">{{ getPeriodLabel(experience) }}</time>
+                </div>
+
+                <div class="experience-item__content">
+                    <h3>{{ experience.role }}</h3>
+
+                    @if (experience.company) {
+                    <span class="experience-item__company">{{ experience.company }}</span>
+                    }
+
+                    <p>{{ experience.description }}</p>
+                </div>
+            </li>
+            }
+        </ol>
+    </div>
+</section>

@@ -85,7 +85,7 @@
     color: var(--color-text-primary);
 }
 
-@media (min-width: 768px) {
+@media (min-width: 960px) {
     .site-nav {
         display: flex;
     }
@@ -95,11 +95,15 @@
     }
 }
 
-@media (max-width: 767px) {
+@media (max-width: 959px) {
     .site-header__inner {
         position: relative;
         flex-wrap: wrap;
         padding-block: var(--space-3);
+    }
+
+    .site-header__actions app-button {
+        display: none;
     }
 
     .site-nav {

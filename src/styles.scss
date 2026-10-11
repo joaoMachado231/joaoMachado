@@ -129,8 +129,9 @@ select {
 }
 
 .container {
+  width: 100%;
   margin-inline: auto;
-  padding: 24px 128px;
+  padding: 24px clamp(1rem, 8.9vw, 8rem);
 }
 
 .section {

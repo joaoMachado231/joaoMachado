@@ -14,7 +14,11 @@
                     <img src="icons/technologies/chevron-icon.svg" alt="icone chevron">
                 </div>
                 <div class="technologies__container__item__answer">
-                    <p class="technologies__container__item__answer-text">{{ item.techs?.join(', ') }}</p>
+                    <ul class="technologies__container__item__answer-list" aria-label="Tecnologias de {{ item.name }}">
+                        @for (tech of item.techs; track tech) {
+                        <li class="technologies__container__item__answer-item">{{ tech }}</li>
+                        }
+                    </ul>
                 </div>
             </button>
             }

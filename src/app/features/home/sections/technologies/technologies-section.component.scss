@@ -29,7 +29,6 @@
             grid-template-rows: auto minmax(0, 0fr);
             transition:
                 grid-template-rows 0.4s ease-out,
-                color var(--transition-fast),
                 background var(--transition-fast);
             padding: 0.75rem 0.5rem;
             border-radius: var(--radius-md);
@@ -39,6 +38,8 @@
             border: 1px solid var(--color-border-hover);
             border-radius: var(--radius-lg);
             background: var(--gradient-surface);
+            color: var(--color-text-primary);
+
 
             &:hover {
                 background: rgba(255, 255, 255, 0.08);
@@ -64,6 +65,21 @@
                 padding: 16px 24px;
                 color: var(--color-text-secondary);
                 font-size: var(--font-size-base);
+                text-align: start;
+
+                &-list {
+                    display: grid;
+                    grid-template-columns: auto auto auto;
+                    gap: 0.5rem;
+                    list-style: none;
+
+                    li {
+                        border: 1px solid var(--color-border-hover);
+                        width: fit-content;
+                        padding: 4px 12px;
+                        border-radius: 12px;
+                    }
+                }
             }
 
             &.open {

@@ -1,0 +1,30 @@
+.section-heading {
+    display: grid;
+    gap: var(--space-3);
+    max-width: 42rem;
+    margin-bottom: var(--space-10);
+
+    &__eyebrow {
+        margin: 0;
+        color: var(--color-primary-light);
+        font-size: var(--font-size-sm);
+        font-weight: var(--font-weight-semibold);
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+    }
+
+    &__title {
+        margin: 0;
+        color: var(--color-text-primary);
+        font-size: clamp(2rem, 3vw, 3rem);
+        line-height: var(--line-height-tight);
+    }
+
+    &__description {
+        max-width: 38rem;
+        margin: 0;
+        color: var(--color-text-secondary);
+        font-size: var(--font-size-base);
+        line-height: var(--line-height-relaxed);
+    }
+}

@@ -1,0 +1,40 @@
+<section class="about section" id="sobre" aria-labelledby="about-title">
+    <div class="container about__layout">
+        <div class="about__story">
+            <app-section-heading eyebrow="SOBRE MIM" title="Um pouco sobre quem está por trás do código."
+                titleId="about-title"></app-section-heading>
+
+            <div class="about__copy">
+                <p>
+                    Sou João Pedro, desenvolvedor de software e bacharel em Sistemas de Informação pela
+                    Universidade Federal de Lavras (UFLA). Atualmente, atuo na CI&T como desenvolvedor
+                    pleno e reúno mais de quatro anos de experiência profissional.
+                </p>
+                <p>
+                    Minha trajetória se concentra no desenvolvimento web, especialmente com Angular e
+                    TypeScript. Também tenho interesse e experiência com backend e outras áreas do
+                    desenvolvimento de software.
+                </p>
+            </div>
+
+            <ul class="about__highlights" aria-label="Destaques profissionais">
+                @for (highlight of highlights; track highlight.value) {
+                <li class="about__highlight">
+                    <strong>{{ highlight.value }}</strong>
+                    <span>{{ highlight.label }}</span>
+                </li>
+                }
+            </ul>
+        </div>
+
+        <div class="about__details" aria-label="O que orienta meu trabalho">
+            @for (principle of principles; track principle.title) {
+            <article class="about__principle">
+                <img [src]="principle.icon" width="45" height="45" [alt]="principle.title">
+                <h3>{{ principle.title }}</h3>
+                <p>{{ principle.description }}</p>
+            </article>
+            }
+        </div>
+    </div>
+</section>

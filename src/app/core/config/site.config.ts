@@ -1,0 +1,26 @@
+export const siteConfig = {
+    siteName: 'João Pedro | Desenvolvedor de Software',
+    author: 'João Pedro',
+    title: 'João Pedro | Desenvolvedor de Software',
+    description:
+        'Portfólio pessoal e profissional de João Pedro, desenvolvedor de software com foco em Angular, TypeScript, backend e experiência do usuário.',
+    url: 'https://joaopedro.dev',
+    locale: 'pt-BR',
+    contact: {
+        email: '',
+    },
+    // TODO: add /public/documents/joao-pedro-cv.pdf and set this path when the PDF is available.
+    cvPath: '',
+    navigation: [
+        { label: 'Início', href: '#top' },
+        { label: 'Sobre', href: '#sobre' },
+        { label: 'Experiência', href: '#experiencia' },
+        { label: 'Projetos', href: '#projetos' },
+        { label: 'Skills', href: '#skills' },
+        { label: 'Contato', href: '#contato' },
+    ],
+    socialLinks: [
+        { label: 'GitHub', href: 'https://github.com/joaoMachado231', icon: 'github', external: true },
+        { label: 'LinkedIn', href: 'https://linkedin.com/in/joão-pedro-bruno-machado-2bb9051bb', icon: 'linkedin', external: true },
+    ],
+} as const;

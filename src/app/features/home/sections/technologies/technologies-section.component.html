@@ -1,0 +1,27 @@
+<section class="technologies" id="technologies" aria-labelledby="technologies-title">
+    <div class="container technologies__container">
+        <app-section-heading eyebrow="TECNOLOGIAS" title="Ferramentas que fazem parte da minha jornada."
+            titleId="technologies-title"
+            description="Estas são algumas das tecnologias que utilizo no desenvolvimento de aplicações e que fazem parte da minha experiência profissional e dos meus projetos."></app-section-heading>
+
+        <div class="technologies__container">
+            @for (item of myTools; track item.id) {
+            <button type="button" class="technologies__container__item" [class.open]="isSessionOpened(item.id)"
+                (click)="expandSession(item.id)" (keydown.enter)="expandSession(item.id)"
+                (keydown.space)="expandSession(item.id); $event.preventDefault()">
+                <div class="technologies__container__item__label">
+                    <span class="technologies__container__item__label-text">{{ item.name }}</span>
+                    <img src="icons/technologies/chevron-icon.svg" alt="icone chevron">
+                </div>
+                <div class="technologies__container__item__answer">
+                    <ul class="technologies__container__item__answer-list" aria-label="Tecnologias de {{ item.name }}">
+                        @for (tech of item.techs; track tech) {
+                        <li class="technologies__container__item__answer-item">{{ tech }}</li>
+                        }
+                    </ul>
+                </div>
+            </button>
+            }
+        </div>
+    </div>
+</section>

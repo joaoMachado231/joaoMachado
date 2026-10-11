@@ -1,0 +1,58 @@
+.app-button {
+    --button-background: transparent;
+    --button-color: var(--color-text-primary);
+    --button-border: var(--color-border);
+    --button-shadow: var(--shadow-sm);
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 3rem;
+    padding: 0.75rem 1.25rem;
+    border-radius: var(--radius-full);
+    border: 1px solid var(--button-border);
+    background: var(--button-background);
+    color: var(--button-color);
+    font-weight: var(--font-weight-medium);
+    text-decoration: none;
+    transition:
+        transform var(--transition-fast),
+        border-color var(--transition-base),
+        box-shadow var(--transition-base),
+        background var(--transition-base);
+    box-shadow: var(--button-shadow);
+    cursor: pointer;
+
+    &:hover {
+        transform: translateY(-1px);
+    }
+
+    &__content {
+        display: inline-flex;
+        align-items: center;
+        gap: var(--space-2);
+    }
+
+    &--primary {
+        --button-background: linear-gradient(135deg, #3b82f6 0%, #6366f1 45%, #8b5cf6 100%);
+        --button-border: transparent;
+        --button-shadow: none;
+    }
+
+    &--secondary {
+        --button-background: rgba(148, 163, 184, 0.08);
+        --button-border: var(--color-border);
+    }
+
+    &--ghost {
+        --button-background: transparent;
+        --button-border: transparent;
+        --button-color: var(--color-text-secondary);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .app-button {
+        transition: none;
+    }
+}

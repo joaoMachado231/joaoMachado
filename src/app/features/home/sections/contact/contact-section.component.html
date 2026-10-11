@@ -1,0 +1,33 @@
+<section id="contact" class="contact-section section" aria-labelledby="contact-title">
+    <div class="container">
+        <div class="contact-card">
+            <div class="contact-card__eyebrow" aria-label="Vamos conversar">
+                <span class="contact-card__eyebrow-line" aria-hidden="true"></span>
+                <span>VAMOS CONVERSAR?</span>
+            </div>
+
+            <h2 id="contact-title" class="contact-card__title">
+                Gostou do que <span class="contact-card__title--gradient">viu?</span>
+            </h2>
+
+            <p class="contact-card__description">
+                Estou sempre aberto a novas oportunidades, colaborações ou boas conversas sobre tecnologia.
+                Vamos conversar?
+            </p>
+
+            <div class="contact-card__actions">
+                <app-button [href]="primaryCta.href" [external]="primaryCta.external" variant="primary"
+                    [ariaLabel]="primaryCta.label">
+                    {{ primaryCta.label }}
+                    <svg lucideArrowRight [size]="18" [strokeWidth]="2.5" aria-hidden="true"></svg>
+                </app-button>
+
+                <app-button [href]="secondaryCta.href" [external]="secondaryCta.external" variant="secondary"
+                    [ariaLabel]="secondaryCta.label">
+                    {{ secondaryCta.label }}
+                    <svg lucideDownload [size]="18" [strokeWidth]="2.5" aria-hidden="true"></svg>
+                </app-button>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,18 @@
+<article class="app-card" [class.app-card--featured]="featured">
+    <div class="app-card__inner">
+        @if (icon) {
+        <img class="app-card__icon" [src]="icon" alt="" aria-hidden="true" />
+        }
+
+        @if (title || caption) {
+        <div class="app-card__content">
+            @if (title) {
+            <span class="app-card__title">{{ title }}</span>
+            }
+            @if (caption) {
+            <span class="app-card__caption">{{ caption }}</span>
+            }
+        </div>
+        }
+    </div>
+</article>

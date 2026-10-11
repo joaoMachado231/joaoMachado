@@ -16,6 +16,7 @@ describe('HomeComponent', () => {
         expect(element.querySelector('app-hero-section')).toBeTruthy();
         expect(element.querySelector('app-about-section')).toBeTruthy();
         expect(element.querySelector('app-technologies-section')).toBeTruthy();
+        expect(element.querySelector('app-contact-section')).toBeTruthy();
         expect(element.querySelector('app-footer')).toBeTruthy();
     });
 });

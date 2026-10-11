@@ -8,6 +8,36 @@
         padding-block: var(--space-8);
     }
 
+    &__brand {
+        display: inline-flex;
+        align-items: center;
+        gap: var(--space-3);
+    }
+
+    &__brand-mark {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 2.5rem;
+        height: 2.5rem;
+        border-radius: var(--radius-md);
+        background: transparent;
+        overflow: hidden;
+
+        img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+    }
+
+    &__brand-copy {
+        display: flex;
+        flex-direction: column;
+        gap: 0.125rem;
+    }
+
     &__name,
     &__role,
     &__meta {
@@ -16,7 +46,13 @@
 
     &__name {
         color: var(--color-text-primary);
+        font-size: var(--font-size-base);
         font-weight: var(--font-weight-semibold);
+    }
+
+    &__role {
+        color: var(--color-text-secondary);
+        font-size: var(--font-size-sm);
     }
 
     &__role,
@@ -34,14 +70,30 @@
         gap: var(--space-4);
     }
 
+    &__nav {
+        justify-content: center;
+    }
+
     &__nav a,
     &__socials a {
-        transition: color var(--transition-fast);
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        transition: color var(--transition-fast), opacity var(--transition-fast);
 
         &:hover,
         &:focus-visible {
             color: var(--color-text-primary);
         }
+    }
+
+    &__socials a {
+        width: 2.5rem;
+        height: 2.5rem;
+        border: 1px solid var(--color-border);
+        border-radius: 50%;
+        background: rgba(148, 163, 184, 0.04);
+        color: var(--color-text-primary);
     }
 
     &__meta {
@@ -50,15 +102,38 @@
 
     &__meta-inner {
         display: flex;
-        justify-content: center;
+        align-items: center;
+        justify-content: space-between;
+        gap: var(--space-4);
         padding-block: var(--space-8);
+        color: var(--color-text-secondary);
+        font-size: var(--font-size-sm);
+    }
+
+    &__heart {
+        color: #f43f5e;
     }
 }
 
 @media (min-width: 768px) {
     .site-footer__inner {
-        grid-template-columns: 1fr auto auto;
+        grid-template-columns: auto 1fr auto;
         align-items: center;
         justify-content: space-between;
+    }
+}
+
+@media (max-width: 767px) {
+    .site-footer__inner {
+        justify-items: start;
+    }
+
+    .site-footer__nav {
+        justify-content: flex-start;
+    }
+
+    .site-footer__meta-inner {
+        flex-direction: column;
+        align-items: flex-start;
     }
 }

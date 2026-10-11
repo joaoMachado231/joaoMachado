@@ -6,6 +6,11 @@ export const siteConfig = {
         'Portfólio pessoal e profissional de João Pedro, desenvolvedor de software com foco em Angular, TypeScript, backend e experiência do usuário.',
     url: 'https://joaopedro.dev',
     locale: 'pt-BR',
+    contact: {
+        email: '',
+    },
+    // TODO: add /public/documents/joao-pedro-cv.pdf and set this path when the PDF is available.
+    cvPath: '',
     navigation: [
         { label: 'Início', href: '#top' },
         { label: 'Sobre', href: '#sobre' },

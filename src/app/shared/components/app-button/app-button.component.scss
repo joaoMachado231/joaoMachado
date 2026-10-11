@@ -34,9 +34,9 @@
     }
 
     &--primary {
-        --button-background: var(--gradient-primary);
+        --button-background: linear-gradient(135deg, #3b82f6 0%, #6366f1 45%, #8b5cf6 100%);
         --button-border: transparent;
-        --button-shadow: var(--shadow-primary-glow);
+        --button-shadow: none;
     }
 
     &--secondary {

@@ -14,16 +14,16 @@ import { AppCardComponent } from '../../../../shared/components/app-card/app-car
 })
 export class HeroSectionComponent {
     readonly primaryCta = {
-        label: 'Conheça meus projetos',
+        label: 'Conheça minha trajetória',
         href: '#experiencia',
     };
     readonly secondaryCta = {
         label: 'Baixar meu CV',
-        href: '#cv',
+        href: siteConfig.cvPath,
     };
     readonly stats = [
-        { value: '+3', label: 'anos de experiência', icon: 'assets/chart-icon.svg' },
-        { value: '+10', label: 'projetos desenvolvidos', icon: 'assets/folder-icon.svg' },
+        { value: '+4', label: 'anos de experiência', icon: 'assets/chart-icon.svg' },
+        { value: 'UFLA', label: 'Sistemas de Informação', icon: 'assets/graduation-cap.svg' },
         { value: '100%', label: 'foco em soluções reais', icon: 'assets/target-icon.svg' },
         { value: 'Aprendizado', label: 'contínuo', icon: 'assets/book-icon.svg' },
     ];

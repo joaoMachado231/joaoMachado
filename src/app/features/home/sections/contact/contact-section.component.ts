@@ -1,7 +1,8 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { LucideArrowRight, LucideDownload } from '@lucide/angular';
 import { siteConfig } from '../../../../core/config/site.config';
+import { WhatsAppService } from '../../../../core/services/whatsapp.service';
 import { AppButtonComponent } from '../../../../shared/components/app-button/app-button.component';
 
 @Component({
@@ -12,31 +13,18 @@ import { AppButtonComponent } from '../../../../shared/components/app-button/app
     styleUrl: './contact-section.component.scss',
 })
 export class ContactSectionComponent {
+    private readonly whatsappService = inject(WhatsAppService);
+
     readonly primaryCta = {
         label: 'Entrar em contato',
-        href: this.getPrimaryContactHref(),
-        external: this.getPrimaryContactHref().startsWith('http'),
+        href: this.whatsappService.getContactUrl(),
+        external: true,
     };
 
     readonly secondaryCta = {
         label: 'Ver meu CV',
-        href: siteConfig.cvPath || '#contato',
+        href: siteConfig.cvPath,
         external: false,
+        download: 'curriculo_joao_machado.pdf',
     };
-
-    private getPrimaryContactHref(): string {
-        const email = siteConfig.contact?.email?.trim();
-
-        if (email) {
-            return `mailto:${email}`;
-        }
-
-        const linkedin = siteConfig.socialLinks.find((link) => link.icon === 'linkedin')?.href;
-
-        if (linkedin) {
-            return linkedin;
-        }
-
-        return '#contato';
-    }
 }

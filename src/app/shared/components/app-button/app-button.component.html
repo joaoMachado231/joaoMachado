@@ -1,5 +1,6 @@
 <a class="app-button app-button--{{ variant }}" [href]="href" [attr.aria-label]="ariaLabel"
-    [attr.target]="external ? '_blank' : null" [attr.rel]="external ? 'noopener noreferrer' : null">
+    [attr.target]="external ? '_blank' : null" [attr.rel]="external ? 'noopener noreferrer' : null"
+    [attr.download]="download || null">
     <span class="app-button__content">
         <ng-content></ng-content>
     </span>

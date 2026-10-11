@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
-import { Component, signal } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import { siteConfig } from '../../core/config/site.config';
+import { WhatsAppService } from '../../core/services/whatsapp.service';
 import { AppButtonComponent } from '../../shared/components/app-button/app-button.component';
 
 @Component({
@@ -13,6 +14,7 @@ import { AppButtonComponent } from '../../shared/components/app-button/app-butto
 export class HeaderComponent {
     readonly menuOpen = signal(false);
     readonly navigation = siteConfig.navigation;
+    readonly whatsappUrl = inject(WhatsAppService).getContactUrl();
     readonly openMenuLabel = 'Abrir menu';
     readonly closeMenuLabel = 'Fechar menu';
 

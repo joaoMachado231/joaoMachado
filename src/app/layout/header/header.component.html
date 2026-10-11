@@ -16,7 +16,9 @@
         </nav>
 
         <div class="site-header__actions">
-            <app-button href="#contato" variant="secondary">Vamos conversar</app-button>
+            <app-button [href]="whatsappUrl" [external]="true" variant="secondary">
+                Vamos conversar
+            </app-button>
             <button class="menu-toggle" type="button" [attr.aria-label]="menuOpen() ? closeMenuLabel : openMenuLabel"
                 [attr.aria-expanded]="menuOpen()" (click)="toggleMenu()">
                 @if (!menuOpen()) {

@@ -32,7 +32,7 @@
     &__title {
         margin: 0;
         color: var(--color-text-primary);
-        font-size: 48px;
+        font-size: clamp(2.25rem, 7vw, 3rem);
         line-height: 1.1;
         letter-spacing: -0.04em;
 
@@ -49,7 +49,7 @@
         max-width: 38rem;
         margin: 0;
         color: var(--color-text-secondary);
-        font-size: 1.2rem;
+        font-size: clamp(1rem, 2vw, 1.2rem);
         line-height: 1.55;
     }
 
@@ -313,7 +313,7 @@
         }
 
         &__visual {
-            min-height: 22rem;
+            min-height: clamp(18rem, 65vw, 22rem);
         }
 
         &__floating-card,
@@ -340,8 +340,14 @@
         }
 
         &__stats {
-            grid-template-columns: 1fr;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
         }
+    }
+}
+
+@media (max-width: 359px) {
+    .hero__stats {
+        grid-template-columns: 1fr;
     }
 }
 

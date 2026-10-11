@@ -27,4 +27,12 @@ describe('AppButtonComponent', () => {
         expect(link?.getAttribute('target')).toBe('_blank');
         expect(link?.getAttribute('rel')).toBe('noopener noreferrer');
     });
+
+    it('sets the download attribute when requested', () => {
+        fixture.componentRef.setInput('download', 'curriculo_joao_machado.pdf');
+        fixture.detectChanges();
+
+        const link = (fixture.nativeElement as HTMLElement).querySelector('a');
+        expect(link?.getAttribute('download')).toBe('curriculo_joao_machado.pdf');
+    });
 });

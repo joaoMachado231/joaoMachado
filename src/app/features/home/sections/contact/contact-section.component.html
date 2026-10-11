@@ -1,4 +1,4 @@
-<section id="contact" class="contact-section section" aria-labelledby="contact-title">
+<section id="contato" class="contact-section section" aria-labelledby="contact-title">
     <div class="container">
         <div class="contact-card">
             <div class="contact-card__eyebrow" aria-label="Vamos conversar">
@@ -22,8 +22,8 @@
                     <svg lucideArrowRight [size]="18" [strokeWidth]="2.5" aria-hidden="true"></svg>
                 </app-button>
 
-                <app-button [href]="secondaryCta.href" [external]="secondaryCta.external" variant="secondary"
-                    [ariaLabel]="secondaryCta.label">
+                <app-button [href]="secondaryCta.href" [external]="secondaryCta.external"
+                    [download]="secondaryCta.download" variant="secondary" [ariaLabel]="secondaryCta.label">
                     {{ secondaryCta.label }}
                     <svg lucideDownload [size]="18" [strokeWidth]="2.5" aria-hidden="true"></svg>
                 </app-button>

@@ -16,4 +16,12 @@ describe('HeroSectionComponent', () => {
         expect(element.textContent).toContain('Conheça meus projetos');
         expect(element.querySelectorAll('.hero__stats app-card').length).toBe(4);
     });
+
+    it('provides the CV download in the hero section', () => {
+        const element = fixture.nativeElement as HTMLElement;
+        const cvLink = element.querySelectorAll<HTMLAnchorElement>('.hero__actions app-button a')[1];
+
+        expect(cvLink.getAttribute('href')).toBe('/documents/curriculo.pdf');
+        expect(cvLink.getAttribute('download')).toBe('curriculo_joao_machado.pdf');
+    });
 });

@@ -1,4 +1,4 @@
-<section class="hero section" aria-labelledby="hero-title">
+<section class="hero section" id="inicio" aria-labelledby="hero-title">
     <div class="container">
         <div class="hero__layout">
             <div class="hero__content">
@@ -25,7 +25,8 @@
                         </svg>
                     </app-button>
 
-                    <app-button [href]="secondaryCta.href" variant="secondary">
+                    <app-button [href]="secondaryCta.href" download="curriculo_joao_machado.pdf"
+                        variant="secondary">
                         {{ secondaryCta.label }}
                     </app-button>
                 </div>

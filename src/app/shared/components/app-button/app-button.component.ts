@@ -12,5 +12,6 @@ export class AppButtonComponent {
     @Input() href?: string;
     @Input() variant: 'primary' | 'secondary' | 'ghost' = 'primary';
     @Input() external = false;
+    @Input() download?: string;
     @Input() ariaLabel?: string;
 }

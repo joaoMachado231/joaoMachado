@@ -9,14 +9,12 @@ export const siteConfig = {
     contact: {
         email: '',
     },
-    // TODO: add /public/documents/joao-pedro-cv.pdf and set this path when the PDF is available.
-    cvPath: '',
+    cvPath: '/documents/curriculo.pdf',
     navigation: [
-        { label: 'Início', href: '#top' },
+        { label: 'Início', href: '#inicio' },
         { label: 'Sobre', href: '#sobre' },
         { label: 'Experiência', href: '#experiencia' },
-        { label: 'Projetos', href: '#projetos' },
-        { label: 'Skills', href: '#skills' },
+        { label: 'Tecnologias', href: '#technologies' },
         { label: 'Contato', href: '#contato' },
     ],
     socialLinks: [

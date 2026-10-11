@@ -107,6 +107,10 @@ main {
   gap: 0;
 }
 
+section[id] {
+  scroll-margin-top: 5.5rem;
+}
+
 img {
   display: block;
   max-width: 100%;

@@ -5,9 +5,10 @@
             description="Estas são algumas das tecnologias que utilizo no desenvolvimento de aplicações e que fazem parte da minha experiência profissional e dos meus projetos."></app-section-heading>
 
         <div class="technologies__container">
-            @for(item of myTools; track item.id) {
-            <div class="technologies__container__item" [class.open]="isSessionOpened(item.id)"
-                (click)="expandSession(item.id)">
+            @for (item of myTools; track item.id) {
+            <button type="button" class="technologies__container__item" [class.open]="isSessionOpened(item.id)"
+                (click)="expandSession(item.id)" (keydown.enter)="expandSession(item.id)"
+                (keydown.space)="expandSession(item.id); $event.preventDefault()">
                 <div class="technologies__container__item__label">
                     <span class="technologies__container__item__label-text">{{ item.name }}</span>
                     <img src="icons/technologies/chevron-icon.svg" alt="icone chevron">
@@ -15,7 +16,7 @@
                 <div class="technologies__container__item__answer">
                     <p class="technologies__container__item__answer-text">{{ item.techs?.join(', ') }}</p>
                 </div>
-            </div>
+            </button>
             }
         </div>
     </div>

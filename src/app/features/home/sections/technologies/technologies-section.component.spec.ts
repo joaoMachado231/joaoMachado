@@ -10,33 +10,29 @@ describe('TechnologiesSectionComponent', () => {
         fixture.detectChanges();
     });
 
-    it('initially renders six technology cards with a consistent size variant', () => {
+    it('initially renders the configured technology groups without any item expanded', () => {
         const element = fixture.nativeElement as HTMLElement;
-        expect(element.querySelectorAll('.technologies__grid app-card').length).toBe(6);
+        const items = element.querySelectorAll('.technologies__container__item');
+
+        expect(items.length).toBe(4);
         expect(element.textContent).toContain('Angular');
         expect(element.textContent).toContain('TypeScript');
-        expect(element.textContent).not.toContain('Spring Boot');
-        expect(element.querySelectorAll('.technologies__grid .app-card--featured').length).toBe(0);
-        expect(element.querySelector('.technologies__toggle')?.textContent?.trim()).toBe('Mostrar mais');
+        expect(element.textContent).toContain('Spring Boot');
+        expect(element.querySelector('.technologies__container__item.open')).toBeNull();
     });
 
-    it('expands to show the remaining cards and can collapse again', () => {
+    it('expands and collapses a technology group as expected', () => {
         const element = fixture.nativeElement as HTMLElement;
-        const button = element.querySelector('.technologies__toggle') as HTMLButtonElement;
+        const button = element.querySelector('.technologies__container__item') as HTMLButtonElement;
 
         button.click();
         fixture.detectChanges();
 
-        expect(element.querySelectorAll('.technologies__grid app-card').length).toBe(12);
-        expect(element.querySelectorAll('.technology-card--revealed').length).toBe(6);
-        expect(button.getAttribute('aria-expanded')).toBe('true');
-        expect(button.textContent?.trim()).toBe('Mostrar menos');
+        expect(button.classList.contains('open')).toBe(true);
 
         button.click();
         fixture.detectChanges();
 
-        expect(element.querySelectorAll('.technologies__grid app-card').length).toBe(6);
-        expect(element.querySelectorAll('.technology-card--revealed').length).toBe(0);
-        expect(button.getAttribute('aria-expanded')).toBe('false');
+        expect(button.classList.contains('open')).toBe(false);
     });
 });

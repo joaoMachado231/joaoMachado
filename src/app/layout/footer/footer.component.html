@@ -6,14 +6,18 @@
         </div>
 
         <nav class="site-footer__nav" aria-label="Links do rodapé">
-            <a *ngFor="let item of navigation" [href]="item.href">{{ item.label }}</a>
+            @for (item of navigation; track item.href) {
+            <a [href]="item.href">{{ item.label }}</a>
+            }
         </nav>
 
         <div class="site-footer__socials">
-            <a *ngFor="let link of socialLinks" [href]="link.href" [attr.target]="link.external ? '_blank' : null"
+            @for (link of socialLinks; track link.href) {
+            <a [href]="link.href" [attr.target]="link.external ? '_blank' : null"
                 [attr.rel]="link.external ? 'noopener noreferrer' : null">
                 {{ link.label }}
             </a>
+            }
         </div>
     </div>
 
